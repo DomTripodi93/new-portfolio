@@ -1,0 +1,13 @@
+
+.big{
+    width: 90%;
+    margin: auto;
+
+    @media screen and (min-width: 980px){
+        max-width: 70%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 60%;
+    }
+}

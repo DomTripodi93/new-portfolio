@@ -1,0 +1,200 @@
+h1{
+    font-size: 45px;
+    margin-bottom: 0px;
+    @media only screen and (max-width:700px) {
+        font-size: 25px;
+    }
+}
+
+h3{
+    margin-bottom: 10px;
+}
+
+h5{
+    @media only screen and (max-width:700px) {
+        font-size: 13px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: white;
+    text-emphasis: bold;
+    text-shadow: 1px 2px 3px #222222;
+}
+
+.pc-only{
+    @media only screen and (max-width:700px) {
+        display: none;
+    }
+}
+
+.hamburger{
+    margin-left: 2%;
+    font-size: 30px;
+}
+
+.hamburger:hover{
+    cursor: pointer;
+}
+
+.drop-down{
+    position: absolute;
+    border: 1px solid black;
+    top: 2%;
+    margin-left: 10%;
+    background-color:  rgb(70, 181, 255);
+
+    .drop-down-item{
+        text-align: center;
+        margin: 10px 10px 10px 10px;
+    }
+}
+
+.header-cover{
+    background-image: url("../../assets/PortfolioBG.png");
+    width: 100%;
+    height: 57.5rem;
+    position: relative;
+    border-radius: 0;
+    margin: 0 0 0 0;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+    background-size: cover;
+    box-shadow: 3px 6px 10px 3px rgba(0,0,0,0.3);
+}
+
+.min{
+    -webkit-filter: drop-shadow(2px 5px 3px #222222);
+    filter: drop-shadow(2px 7px 3px #222222);
+    width: 60%;
+    max-width: 200px;
+    margin: 0px 20px 0px 20px;
+}
+
+.over-top{
+    z-index: 9999;
+    opacity: 1;
+}
+
+.me{
+    -webkit-filter: drop-shadow(2px 5px 3px #222222);
+    filter: drop-shadow(2px 7px 3px #222222);
+    position: absolute;
+    bottom:0px;
+    left:25%;
+    width: 50%;
+    @media only screen and (min-width:900px) {
+        left:30%;
+        width: 40%;
+    }
+    @media only screen and (min-width:1100px) {
+        left:34%;
+        width: 30%;
+    }
+    @media only screen and (min-width:1400px) {
+        left: 40%;
+        width: 21%;
+    }
+    @media only screen and (max-width:500px) {
+        left:5%;
+        width: 90%;
+    }
+}
+
+.img-holder{
+    margin: auto;
+    display: block;
+    border-radius: 0;
+}
+
+#overlay {
+    position: absolute; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../assets/bg9.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+    background-size: cover;
+    opacity: .3;
+    z-index: -1; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.header{
+    background: rgb(70, 181, 255);
+    width: 93%;
+    max-width: 850px;
+    margin: auto;
+    height: 4.25rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    .logo-holder {
+        width: 3rem;
+        padding: .25rem 0 .25rem .25rem;
+    }
+
+    .route {
+      padding: 10px 10px;
+    }
+
+    .route:hover {
+        cursor: pointer;
+    }
+
+    .routes{
+        width: 61%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .edge{
+        width: 17%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0px 10px;
+    }
+
+    .drop-down{
+        position: absolute;
+        border: 1px solid black;
+        top: 62px;
+        padding:5px 0px 5px 0px;
+        background-color:  rgb(70, 181, 255);
+
+        .drop-down-item{
+            text-align: center;
+            margin: 10px 10px 10px 10px;
+        }
+    }
+
+
+    @media only screen and (max-width: 700px){
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 500px){
+
+        a, ul{
+          font-size: 15px;
+        }
+        .drop-down-item{
+            font-size: 14.5px;
+        }
+      }
+}
+

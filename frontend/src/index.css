@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@font-face {
+  font-family: myH1Font;
+  src: url(./assets/HussarSzturm-Alxg.otf) format("opentype");
+}
+
+@font-face {
+  font-family: myH4Font;
+  src: url(./assets/FogSans-Re46.otf) format("opentype");
+}
+
+@font-face {
+  font-family: myH5Font;
+  src: url(./assets/OverpassReg-8ygA.ttf) format("opentype");
+}
+
+h1 {
+  font-family: myH5font;
+}
+
+button {
+  font-family: myH4Font;
+  height: 68px;
+}
+
+a {
+  font-family: myH1Font;
+}
+
+h2 {
+  font-family: myH5Font;
+}
+
+h3 {
+  font-family: myH5Font;
+}
+
+h4 {
+  letter-spacing: 0.07em;
+  font-family: myH4Font;
+}
+
+h5 {
+  font-size: 110%;
+  letter-spacing: 0.085em;
+  font-family: myH4Font;
+}
+
+.img-holder {
+  transition: 2s;
+  border-radius: 10%;
+}
+
+.img-holder:hover,
+.img-holder:focus,
+.img-holder:active {
+  transition: 2s;
+  border-radius: 00%;
+}
+
+.btn {
+  font-size: 24px;
+}
+
+.btn:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.img-link:hover,
+.img-link:focus,
+.img-link:active {
+  transition: 1s;
+  opacity: 0.6;
+}
+
+.img-link {
+  transition: 1s;
+  opacity: 1;
+  border-radius: 5%;
+}
+
+.bg{
+  background-image: url("./assets/bg9.jpg");
+  width:100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.not-sticky{
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+}
