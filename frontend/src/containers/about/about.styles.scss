@@ -1,0 +1,28 @@
+
+.img-holder-cert{
+    width: 90%;
+}
+
+.img-float-left{
+    float: left;
+}
+
+.img-float-right{
+    float: right;
+}
+
+.icon-sized{
+    max-width: 390px;
+    width: 40%;
+    @media screen and (max-width: 800px) {
+        max-width: 170px;
+        width: 40%;
+    }
+}
+
+h4{
+    font-size: 25px;
+    @media screen and (max-width: 800px) {
+        font-size: 15px;
+    }
+}

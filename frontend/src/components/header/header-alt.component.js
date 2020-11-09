@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
-import './header.styles.scss';
-
 import github from '../../assets/github.png';
-import me from '../../assets/me.png';
 import phone from '../../assets/phone.png';
 import mail from '../../assets/email2.png';
 import linkedin from '../../assets/linkedin.png';
+import logo from "../../assets/logonew.png";
 
 
-const Header = props => {
+const HeaderAlt = props => {
     const [dropDownHidden, toggleDropDownHidden] = useState(true);
 
     const toggleDropDown = () => {
@@ -23,17 +21,32 @@ const Header = props => {
     }
 
     return (
-        <div onClick={hideDropDown} className='header-cover'>
+        <div id="Header" onClick={hideDropDown} className='header-cover2'>
             <div id="overlay">
             </div>
-            <img className="img-holder me" src={me} alt="self"></img>
-            <h3 onClick={toggleDropDown} class="hamburger">
+            <h3 onClick={toggleDropDown} className="hamburger">
                 &#9776;
             </h3>
             {!dropDownHidden ?
                 <div className="drop-down">
-                    <h5 class="drop-down-item">
-                    </h5>
+                    <div className='split block-head'>
+                        <div className="grid50">
+                            <h3 onClick={toggleDropDown} className="hamburger2">
+                                &#9776;
+                            </h3>
+                            <div className="logo2">
+                                <a href="/">
+                                    <img src={logo} width="50px" alt="logo" />
+                                </a>
+                            </div>
+                        </div>
+                        <div className="header-tag">
+                            <a href="/Samples">Samples</a>
+                        </div>
+                        <div className="header-tag">
+                            <a href="/About" >About</a>
+                        </div>
+                    </div>
                 </div>
                 :
                 null
@@ -41,21 +54,17 @@ const Header = props => {
             <div className="centered">
                 <h1>Dominic Tripodi, Full Stack Developer</h1>
             </div>
-            <div className="grid50-to-100 centered sized size-holder middle">
-                <h3 className="pc-only">Reach Me:</h3>
-                <h3 className="pc-only">Find Me:</h3>
+            <div className="grid50 centered sized size-holder middle">
                 <div className="grid50">
                     <div>
                         <a href="mailto:DTripodi93@Gmail.com">
                             <img className="min" src={mail} alt="mail"></img>
                         </a>
-                        <h5>DTripodi93@Gmail.com</h5>
                     </div>
                     <div>
                         <a href="tel:12674071282">
                             <img className="min" src={phone} alt="phone"></img>
                         </a>
-                        <h5>267-407-1282</h5>
                     </div>
                 </div>
                 <div className="grid50">
@@ -75,4 +84,4 @@ const Header = props => {
     )
 }
 
-export default Header;
+export default HeaderAlt;
