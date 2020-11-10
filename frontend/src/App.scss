@@ -40,6 +40,27 @@ img{
   }
 }
 
+
+.block-sample{
+  border-radius: 1.5%;
+  background-color: #1f2833;
+  background-image: url("/assets/bg3.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  overflow: hidden;
+  background-size: cover;
+  box-shadow: 3px 6px 10px 3px rgba(0,0,0,0.3);
+  padding: 40px 40px 40px 40px;
+}
+
+
 .code{
   color: rgb(213, 146, 251);
   background-color: rgb(39, 36, 36);

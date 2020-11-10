@@ -14,6 +14,9 @@ const JSVariables = props => {
                     Table Of Contents:
                 </h4>
                 <h4>
+                    Varaible Declaration
+                </h4>
+                <h4>
                     Strings
                 </h4>
                 <h4>
@@ -34,6 +37,72 @@ const JSVariables = props => {
             </div>
             <div class="block-sample">
                 <h4>
+                    What is Variable Declaration?
+                </h4>
+                <h5>
+                    Variable declaration is how you create a variable. Variables are declared differently in different languages.
+                    There are two main types of variable declaration, dynamic and static. You will hear languages refered to as 
+                    dynamicalled typed, or statically typed. 
+                </h5>
+                <h5>
+                    Declaring variables is an important part of programming that allows us to work with and display data.
+                </h5>
+                <h4>
+                    Statically Typed
+                </h4>
+                <h5>
+                    Statically typed languages require an explicitly declared variable type on declaration. 
+                    The type of the variable is set differently in different languages:
+                </h5>
+                <h5>
+                <pre className='code'>{`
+//TypeScript
+const variableName: string = "something";
+const secondVariable: number = 7;
+const trueOrFalse: boolean = false;
+
+//C#
+public string VariableName = "something";
+public int SecondVariable = 7;
+public Boolean TrueOrFalse = false;
+                `}</pre>
+                </h5>
+                <h4>
+                    Dynamically Typed
+                </h4>
+                <h5>
+                    In dynamically typed languages, variable type is implicitly assumed instead of explicitly declared. When a variable is given 
+                    a value, it's value determines it's type.
+                </h5>
+                <h5>
+                <pre className='code'>{`
+//JavaScript
+const varaibleName;
+//typeof(variableName) outputs undefined
+variableName = "something";
+//typeof(variableName) outputs string
+variableName = 7;
+//typeof(variableName) outputs number
+variableName = false;
+//typeof(variableName) outputs boolean
+
+#Python
+VariableName = None
+#print(type(VariableName)) outputs <class 'NoneType'>
+VariableName = ""
+#print(type(VariableName)) outputs <class 'string'>
+VariableName = 7
+#print(type(VariableName)) outputs <class 'int'>
+VariableName = False
+#print(type(VariableName)) outputs <class 'bool'>
+                `}</pre>
+                </h5>
+                <h5>
+                    In JavaScript, as well as Python, you will notice that the same variable can be assigned a new value, and
+                    as a result will take on the type of the current value.
+                </h5>
+
+                <h4>
                     Strings
                 </h4>
                 <h5>
@@ -41,10 +110,11 @@ const JSVariables = props => {
                     that holds words. 
                 </h5>
                 <h5>
-                    <pre class='code'>
-                <strong>var</strong> myString = "something";
-                <strong>let</strong> myOtherString = "$#$^@^#$@ @#$^@ #^$@^ @#^$";
-                <strong>const</strong> myThirdString = "555-555-5555";
+                    <pre className='code'>{`                 
+var myString = "something";
+let myOtherString = "$#$^@^#$@ @#$^@ #^$@^ @#^$";
+const myThirdString = "555-555-5555";
+                    `}
                     </pre>
                 </h5>
                 <h5>
@@ -71,15 +141,15 @@ const JSVariables = props => {
                     
                 </h5>
             <h5>
-            <pre class='code'>
-<strong>var</strong> myString = "something";
+            <pre class='code'>{`
+var myString = "something";
 //Has a value of "something"
-(function someFunc() {'{'}
-<strong>var</strong> myString = "different";
+(function someFunc() {
+var myString = "different";
 //Has a value of "different"
-{'}'}();
+}();
 console.log(myString);
-//Outputs "different" as the value has been changed on the global scope 
+//Outputs "different" as the value has been changed on the global scope `}
             </pre>
             </h5>
             <h5>
@@ -91,12 +161,15 @@ console.log(myString);
 <strong>let</strong> myOtherString = "555-555-5555";
 //Has a value of "555-555-5555"
 (function someFunc() {
-    <strong>let</strong> myOtherString = "different";
+    let myOtherString = "different";
     //Has a value of "different"
 })();
 console.log(myString);
 //Outputs "555-555-5555" as the value has <strong>not</strong> been changed on the global scope 
             `}</pre>
+            </h5>
+            <h5>
+
             </h5>
             </div>
         </div>

@@ -11,6 +11,7 @@ const Home = lazy(() => import('./containers/home/home.container'));
 const Samples = lazy(() => import('./containers/samples/samples.container'));
 const Blog =lazy(()=> import('./containers/blog/blog.container'));
 const About = lazy(() => import( './containers/about/about.container'));
+const VariableDeclaration = lazy(()=>import('./components/blog/variable-declaration'));
 
 function App() {
     var header = document.getElementById("myHeader");
@@ -66,6 +67,9 @@ function App() {
                     } />
                     <Route exact path='/blog' render={()=>
                         <Blog callback={setIsMain}/>
+                    } />
+                    <Route exact path='/blog/VariableDeclaration' render={()=>
+                        <VariableDeclaration callback={setIsMain}/>
                     } />
                 </Switch>
             </Suspense>
