@@ -11,12 +11,13 @@ const Home = lazy(() => import('./containers/home/home.container'));
 const Samples = lazy(() => import('./containers/samples/samples.container'));
 const Blog =lazy(()=> import('./containers/blog/blog.container'));
 const About = lazy(() => import( './containers/about/about.container'));
-const VariableDeclaration = lazy(()=>import('./components/blog/variable-declaration'));
+const BlogList = lazy(() => import('./containers/blog/blog-list.container'));
+export const HeaderContext = React.createContext();
 
 function App() {
     var header = document.getElementById("myHeader");
     var sticky = -450;
-    const [isMain, setIsMain] = useState(true);
+    const [isMain, setIsMain] = useState(false);
 
     useEffect(()=>{
         header = document.getElementById("myHeader");
@@ -26,12 +27,22 @@ function App() {
     window.onscroll = () => { myHeader() };
 
     const myHeader = () => {
-        if (window.pageYOffset - 750  > sticky) {
-            header.classList.add("sticky");
-            header.classList.remove("not-sticky");
+        if (isMain){
+            if (window.pageYOffset - 1250  > sticky) {
+                header.classList.add("sticky");
+                header.classList.remove("not-sticky");
+            } else {
+                header.classList.add("not-sticky");
+                header.classList.remove("sticky");
+            }
         } else {
-            header.classList.add("not-sticky");
-            header.classList.remove("sticky");
+            if (window.pageYOffset - 320  > sticky) {
+                header.classList.add("sticky");
+                header.classList.remove("not-sticky");
+            } else {
+                header.classList.add("not-sticky");
+                header.classList.remove("sticky");
+            }
         }
     }
 
@@ -53,26 +64,32 @@ function App() {
                     <div className="middle">
                         <a href="/About" >About</a>
                     </div>
+                    <div className="middle">
+                        <a href="/Blog" >Blog</a>
+                    </div>
                 </div>
             </div>
+
             <Header main={isMain}/>
-            <Suspense fallback={<Loading />}>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route exact path='/samples' render={()=>
-                        <Samples callback={setIsMain}/>
-                    } />
-                    <Route exact path='/about' render={()=>
-                        <About callback={setIsMain}/>
-                    } />
-                    <Route exact path='/blog' render={()=>
-                        <Blog callback={setIsMain}/>
-                    } />
-                    <Route exact path='/blog/VariableDeclaration' render={()=>
-                        <VariableDeclaration callback={setIsMain}/>
-                    } />
-                </Switch>
-            </Suspense>
+            <HeaderContext.Provider value={setIsMain}>
+                <Suspense fallback={<Loading />}>
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route exact path='/samples' render={()=>
+                            <Samples callback={setIsMain}/>
+                        } />
+                        <Route exact path='/about' render={()=>
+                            <About callback={setIsMain}/>
+                        } />
+                        <Route exact path='/blog' render={()=>
+                            <BlogList callback={setIsMain}/>
+                        } />
+                        <Route exact path='/blog/:post' render={(props)=>
+                            <Blog {...props} callback={setIsMain}/>
+                        } />
+                    </Switch>
+                </Suspense>
+            </HeaderContext.Provider>
             <Footer />
         </div>
     );

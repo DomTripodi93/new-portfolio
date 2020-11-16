@@ -1,27 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import JSVariables from '../../components/blog/js-variables';
 import VariableDeclaration from '../../components/blog/variable-declaration';
 import './blog.styles.scss';
-import { Link } from 'react-router-dom';
+import { HeaderContext } from '../../App';
 
 const Blog = props => {
+    let [post, setPost] = useState("");
+    const setHeader = useContext(HeaderContext);
+
     useEffect(()=>{
-        if(props.callback){
-            props.callback();
-        }
+        setHeader(false);
     })
+
+
+    useEffect(()=>{
+        setPost(props.match.params.post);
+    },[props])
+
 
     return (
         <div>
-            <div className="block-sample">
-                <Link to="/blog/VariableDeclaration">
-                    <h3 className="link">Variable Declaration</h3>
-                </Link>
-                <h5>
-                    Learn about declaring variables and the difference between statically 
-                    and dynamically typed programming languages
-                </h5>
-            </div>
+            {post === "VariableDeclaration" ?
+                <div>
+                    <VariableDeclaration />
+                </div>
+                :
+                null
+            }
+            {post === "JavaScriptVariables" ?
+                <div>
+                    <JSVariables />
+                </div>
+                :
+                null
+            }
         </div>
     )
 }

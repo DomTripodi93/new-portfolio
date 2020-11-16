@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ctfl from "../../assets/ctfl.jpg";
 import reactIcon from "../../assets/react.png";
 import nodeIcon from "../../assets/node.png";
@@ -7,14 +7,17 @@ import dotNet from "../../assets/dotnet.png";
 import psm from "../../assets/PSM1.jpg";
 
 import "./about.styles.scss";
+import { HeaderContext } from '../../App';
 
 const About = props => {
+    const setHeader = useContext(HeaderContext);
 
     useEffect(()=>{
-        if(props.callback){
-            props.callback();
+        if(!props.home){
+            setHeader(false);
         }
     })
+
 
     return (
     <div className='centered'>

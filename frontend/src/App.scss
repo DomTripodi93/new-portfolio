@@ -4,6 +4,7 @@ h1,h2,h3{
   font-weight: bold;
 }
 
+
 h3{
   font-size: 22px;
   @media screen and (max-width: 800px){
@@ -41,16 +42,22 @@ img{
 }
 
 
+h4{
+  font-size: 30px;
+  @media screen and (max-width: 800px){
+    font-size: 25px;
+  }
+}
+
+
 .block-sample{
   border-radius: 1.5%;
   background-color: #1f2833;
   background-image: url("/assets/bg3.jpg");
   background-repeat: no-repeat;
-  height: 100%;
-  width: 90%;
   margin: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -58,6 +65,10 @@ img{
   background-size: cover;
   box-shadow: 3px 6px 10px 3px rgba(0,0,0,0.3);
   padding: 40px 40px 40px 40px;
+  @media only screen and (max-width: 800px){
+    border-radius: 0%;
+    padding: 20px 20px 20px 20px;
+  }
 }
 
 
@@ -83,7 +94,7 @@ img{
 a, ul{
   font-size: 16px;
   text-decoration: none;
-  color: rgb(69, 18, 132);
+  color: rgb(255, 255, 255);
   font-weight: 600;
   @media only screen and (max-width:700px) {
       font-size: 14px;
@@ -306,10 +317,6 @@ a, ul{
   grid-template-columns: 40% 20% 40%;
   margin-bottom: 40px;
   margin-top: 40px;
-  @media only screen and (max-width: 700px){
-    grid-template-columns: 20% 60% 20%;
-    margin-bottom: 20px;
-  }
 }
 
 .grid50-to-100 { 
@@ -339,6 +346,11 @@ a, ul{
     width: 20%;
     margin: 17px 2.5% 17px 2.5%;
   }
+}
+
+.spaced-code{
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
 .spaced{

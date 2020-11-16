@@ -48,13 +48,16 @@ const HeaderMain = props => {
                         <div className="header-tag">
                             <a href="#About" >About</a>
                         </div>
+                        <div className="middle">
+                            <a href="/Blog" >Blog</a>
+                        </div>
                     </div>
                 </div>
                 :
                 null
             }
             <div className="centered">
-                <h1>Dominic Tripodi, Full Stack Developer</h1>
+                <h1 className="title-text">Dominic Tripodi, Full Stack Developer</h1>
             </div>
             <div className="grid50 centered sized size-holder middle">
                 <h3 className="pc-only">Reach Me:</h3>

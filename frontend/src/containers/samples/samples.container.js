@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import sAndD from "../../assets/procmgmt.png";
 import sAndD1 from "../../assets/procmgmt1.png";
@@ -21,14 +21,16 @@ import carolines3 from "../../assets/carolines3.png";
 import Sample from '../../components/samples/sample.component';
 
 import "./sample.styles.scss";
+import { HeaderContext } from '../../App';
 
 const Samples = props => {
+    const setHeader = useContext(HeaderContext);
 
     useEffect(()=>{
-        if(props.callback){
-            props.callback();
+        if (!props.home){
+            setHeader(false);
         }
-    })
+    },[setHeader, props])
 
     const samples = [
         {
