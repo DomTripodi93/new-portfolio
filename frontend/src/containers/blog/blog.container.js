@@ -3,6 +3,7 @@ import JSVariables from '../../components/blog/js-variables';
 import VariableDeclaration from '../../components/blog/variable-declaration';
 import './blog.styles.scss';
 import { HeaderContext } from '../../App';
+import Scope from '../../components/blog/scope';
 
 const Blog = props => {
     let [post, setPost] = useState("");
@@ -20,7 +21,7 @@ const Blog = props => {
 
     return (
         <div>
-            {post === "VariableDeclaration" ?
+            {post === "DynamicVsStatic" ?
                 <div>
                     <VariableDeclaration />
                 </div>
@@ -30,6 +31,13 @@ const Blog = props => {
             {post === "JavaScriptVariables" ?
                 <div>
                     <JSVariables />
+                </div>
+                :
+                null
+            }
+            {post === "Scope" ?
+                <div>
+                    <Scope />
                 </div>
                 :
                 null

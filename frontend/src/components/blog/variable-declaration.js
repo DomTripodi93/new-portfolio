@@ -24,6 +24,11 @@ const VariableDeclaration = props => {
                     Table Of Contents:
                 </h3>
                 <h4>
+                    <a href="#StaticVDynamic">
+                        What is Varaible Declaration?
+                    </a>
+                </h4>
+                <h4>
                     <a href="#What">
                         What is Varaible Declaration?
                     </a>
@@ -43,6 +48,43 @@ const VariableDeclaration = props => {
                         Conclusion
                     </a>
                 </h4>
+                <div id="StaticVDynamic"></div>
+            </div>
+            <div class="block-sample">
+                <h3>
+                    What do Static and Dynamic mean?
+                </h3>
+                <h4>
+                    Static
+                </h4>
+                <h5>
+                    Static means unchanging or fixed, so something static is something that is always the same. 
+                </h5>
+                <h5>
+                    In the case of programming languages, "static" refers to variable types. When a variable 
+                    is declared in a statically typed programming language, it is assigned a type and that 
+                    type cannot be changed.
+                </h5>
+                <h5>
+                    When I think of static, I think of something that doesn't move like a wall, or a sidewalk. 
+                </h5>
+                <h4>
+                    Dynamic
+                </h4>
+                <h5>
+                    Dynamic means flexible, so something dynamic is able to change and fit the needs of a 
+                    given situation
+                </h5>
+                <h5>
+                    In the case of programming languages, "dynamic" also refers to variable types. When a variable 
+                    is declared in a dynamically typed programming language, it's value implicitly decides it's type.
+                    In some dynamic programming lanugages like Python and JavaScript, the same variable can be
+                    reassigned or redeclared with a value of a different type, which also changes the variable type.
+                </h5>
+                <h5>
+                    When I think of dynamic, I think of something that can grow or change into something else, like 
+                    clay or a caterpillar. 
+                </h5>
                 <div id="What"></div>
             </div>
             <div class="block-sample">

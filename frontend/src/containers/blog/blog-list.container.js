@@ -18,17 +18,24 @@ const BlogList = props => {
                     <h3 className="link">JavaScript Variables</h3>
                 </Link>
                 <h5>
-                    Learn about declaring variables and the difference between statically 
+                    Learn about the different types of variables in JavaScript.
+                </h5>
+            </div>
+            <div className="block-sample">
+                <Link to="/blog/DynamicVsStatic">
+                    <h3 className="link">Dynamically vs Statically Typed </h3>
+                </Link>
+                <h5>
+                    Learn the difference between statically 
                     and dynamically typed programming languages.
                 </h5>
             </div>
             <div className="block-sample">
-                <Link to="/blog/VariableDeclaration">
-                    <h3 className="link">Variable Declaration</h3>
+                <Link to="/blog/Scope">
+                    <h3 className="link">Scope</h3>
                 </Link>
                 <h5>
-                    Learn about declaring variables and the difference between statically 
-                    and dynamically typed programming languages.
+                    Learn about the different levels of scope in JavaScript.
                 </h5>
             </div>
         </div>
