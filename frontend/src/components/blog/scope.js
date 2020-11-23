@@ -88,8 +88,11 @@ const Scope = props => {
                 <h4>Function Scope</h4>
                 <h5>
                     In JavaScript the scope of a function is it's own separated environment where variables declared with any keyword 
-                    including var are unique to the scope and it's child scopes. Child scopes are lower scopes contained 
-                    inside of the function. This includes nested functions, conditionals and loops. 
+                    including var are unique to the function and it's child scopes. 
+                </h5>
+                <h5>
+                    Child scopes are lower scopes contained inside of the function. This includes nested 
+                    functions, conditionals and loops. 
                 </h5>
                 <div id="Block"></div>
             </div>
@@ -113,12 +116,12 @@ const Scope = props => {
             <div class="block-sample">
                 <h3>Declaration Keywords</h3>
                 <h5>
-                    There are three keywords that can be used to declare a variable in JavaScript: let, const, and var. 
+                    There are three keywords that can be used to declare a variable in JavaScript: const, let, and var. 
                 </h5>
                 <h4>const</h4>
                 <h5>
-                    The const keyword is used to declare an variable in the "block" scope as well, but with immutable binding.
-                    This means that it cannot be reassigned or redeclared with a new value.
+                    The const keyword is used to declare an variable in the "block" scope. A variable declared with the 
+                    const keyword will have immutable binding. This means that it cannot be reassigned or redeclared with a new value.
                 </h5>
                 <div className="spaced-code middle code">
                 <SyntaxHighlighter language="javascript" style={dark}>
@@ -127,7 +130,7 @@ const myString = "555-555-5555";
 // Has a value of "555-555-5555"
 
 (function someFunc() {
-    let myString = "different";
+    const myString = "different";
     // Has a value of "different"
 })();
 
@@ -142,31 +145,32 @@ myString = 15;
 // Causes an error "Uncaught TypeError: Assignment to constant variable"
 //      because a const cannot be reassigned
 
-const myString y = 6;
+const mySecondString = 6;
 for (let i = 0; i < 5; i++){
-    myString x = i;
-    myString y = i;
+    mySecondString = i;
+    myThirdString = i;
 }
-console.log(x);
-// Outputs "Uncaught ReferenceError: x is not defined" because declaring a variable 
-//      with let inside of a loop is block scoped
-console.log(y);
-// Outputs 6 becuase the y in the for loop is block scoped to the for loop, and 
-//      therefore a different variable than the y in the global scope
+console.log(mySecondString);
+// Outputs 6 becuase the mySecondString in the for loop is block scoped to the for loop, and 
+//      therefore a different variable than the mySecondString in the global scope
+
+console.log(myThirdString);
+// Outputs "Uncaught ReferenceError: myThirdString is not defined" because declaring  
+//      a variable with const inside of a loop is block scoped
                 `}
                 </SyntaxHighlighter>
                 </div>
                 <h4>let</h4>
                 <h5>
-                    The let keyword is used to declare a variable in the "block" scope. this means that it is accessible
-                    only within the code block it is declared in, and deeper.
+                    Like the const keyword, the let keyword is also used to declare a variable in the "block" scope. 
+                    This means that it is accessible only within the code block it is declared in, and deeper.
                 </h5>
                 <h5>
-                    A variable declared using the let keyword can be reassigned or redeclared with a new value.
+                    Unlike the const keyword, A variable declared using the let keyword can be reassigned or redeclared with a new value.
                 </h5>
                 <h5>
                     When a variable declared using the let keyword is redeclared in a deeper scope is doesn't
-                    affect a variable of the same name at a higher level.
+                    affect a variable of the same name in a higher scope.
                 </h5>
                 <div className="spaced-code middle code">
                 <SyntaxHighlighter language="javascript" style={dark}>
@@ -190,28 +194,39 @@ myString = 15;
 // myString now has a value of 15, because variables declared with the let keyword
 //      can be reassigned
 
-let y = 6;
+let mySecondString = 6;
 for (let i = 0; i < 5; i++){
-    let x = i;
-    let y = i;
+    let mySecondString = i;
+    let myThirdString = i;
 }
-console.log(x);
-// Outputs "Uncaught ReferenceError: x is not defined" because declaring a variable 
-//      with let inside of a loop is block scoped
-console.log(y);
-// Outputs 6 becuase the y in the for loop is block scoped to the for loop, and 
-//      therefore a different variable than the y in the global scope
+console.log(mySecondString);
+// Outputs 6 becuase the mySecondString in the for loop is block scoped to the for loop, and 
+//      therefore a different variable than the mySecondString in the global scope
+
+console.log(myThirdString);
+// Outputs "Uncaught ReferenceError: myThirdString is not defined" because declaring 
+//      a variable with let inside of a loop is block scoped
                 `}
                 </SyntaxHighlighter>
                 </div>
                 <h4>var</h4>
                 <h5>
                     The var keyword is used to declare a variable in the "function" or "global" scope, 
-                    meaning that if it is declared in the root of a JavaScript file, it is accessible throughout
-                    the file, and if it is declared within a function, it is accessible only within that function.
                 </h5>
                 <h5>
-                    A variable declared using the var keyword can also be reassigned or redeclared with a new value.
+                    If a variable is declared with var in the root of a JavaScript file, it is accessible throughout
+                    the file. 
+                </h5>
+                <h5>
+                    If a variable is declared with var within a function, it is accessible only within that function, 
+                    and does not affect a variable of the same name in the global scope.
+                </h5>
+                <h5>
+                    Because var is not block scoped however, if a variable is declared with var within a loop or conditional, 
+                    it does affect a variable of the same name in the global or function scope.
+                </h5>
+                <h5>
+                    Like the let keyword, a variable declared using the var keyword can also be reassigned or redeclared with a new value.
                 </h5>
                 <div className="spaced-code middle code">
                 <SyntaxHighlighter language="javascript" style={dark}>   
@@ -235,18 +250,18 @@ myString = 15;
 // myString now has a value of 15, because variables declared with the var keyword
 //      can be reassigned
 
-var y = 6;
+var mySecondString = 6;
 for (let i = 0; i < 5; i++){
-    var x = i;
-    var y = i;
+    var mySecondString = i;
+    var myThirdString = i;
 }
-console.log(x);
+console.log(mySecondString);
 // Outputs 4 because declaring a variable 
-//      with var inside of a loop is globally scoped
+//      with var inside of a loop is not block scoped
 
-console.log(y);
-// Outputs 4 becuase the y in the for loop is globally scoped, and 
-//      therefore the same variable as the y in the global scope
+console.log(myThirdString);
+// Outputs 4 becuase the myThirdString in the for loop is not block scoped, and 
+//      therefore the same variable as the myThirdString in the global scope
                 `}
                 </SyntaxHighlighter>
                 </div>

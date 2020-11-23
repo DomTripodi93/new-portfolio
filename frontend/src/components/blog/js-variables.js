@@ -142,7 +142,7 @@ let myChar = myString[3];
                 </h5>
                 <h5>
                     In most other languages you have multiple types like "int", "float", and "double". 
-                    In JavaScript we simply have the "number" type which can be used for any of the above.
+                    In JavaScript we simply have the "number" type which can be used for any numberic value.
                 </h5>
                 <div className="spaced-code middle code">
                 <SyntaxHighlighter language="javascript" style={dark}> 
@@ -357,10 +357,10 @@ class myClass {
 
 let classObject = new myClass(12);
 
-let secondVaraibleOut = myClass.secondVariable;
+let secondVaraibleOut = classObject.secondVariable;
 // secondVariableOut has a value of "words"
 
-let returnedSomeVariable = myClass.getSomeVariable();
+let returnedSomeVariable = classObject.getSomeVariable();
 // returnedSomeVariable has a value of 12
 
 let isAnInstanceOf = classObject instanceof myClass;
@@ -369,7 +369,7 @@ let isAnInstanceOf = classObject instanceof myClass;
                 </SyntaxHighlighter>
                 </div>
                 <h5>
-                    You may have noticed what looks that "getSomeVariable" in "myClass" looks and acts like a function, but was not declared 
+                    You may have noticed that "getSomeVariable" in "myClass" looks and acts like a function, but was not declared 
                     using the function keyword. A function that belongs to a class does not need the function keyword and is called a method.
                 </h5>
                 <h5>
